@@ -25,7 +25,6 @@ module.exports = function (app) {
             questions: questions
         }, function (form) {
             console.log(form);
-            res.send('zashli');
             res.send(form);
         });
     });
