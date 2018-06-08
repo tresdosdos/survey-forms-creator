@@ -20,7 +20,7 @@ const corsOptions = {
 };
 
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const dir = path.join(__dirname, '/dist/survey-forms');
 
