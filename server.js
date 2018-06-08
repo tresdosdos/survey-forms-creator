@@ -30,8 +30,6 @@ app.use(fileUpload());
 app.use(bodyParser.urlencoded({ extended: true })); ///нужное
 app.use(bodyParser.json());
 
-require('./middleware/addForm')(app);
-
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -42,3 +40,8 @@ app.use(function(req, res, next) {
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
+require('./middleware/addForm')(app);
+
+app.get('/', function (req, res) {
+   res.end('lul');
+});

@@ -2,7 +2,7 @@
   "name": "myproject",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon ./server.js",
+    "start": "node server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "dependencies": {
