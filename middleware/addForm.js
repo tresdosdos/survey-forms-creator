@@ -10,6 +10,8 @@ module.exports = function (app) {
             return res.sendStatus(400);
         }
         const {author, question} = req.body;
+        console.log(req.body);
+        console.log(req.body.author);
         console.log(author + ' ' + question);
         createForm({
             author: author,
