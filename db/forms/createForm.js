@@ -6,7 +6,7 @@ module.exports = function createForm(data, callback) {
         questions: data.questions
     };
     let form = new Form(formData);
-    form.save(function (err, form) {
+    form.save().then(function (form) {
         callback(form);
     });
 };
