@@ -14,4 +14,4 @@ const schema = mongoose.Schema(
     }
 );
 
-exports.User = mongoose.model('Form', schema);
+exports.Form = mongoose.model('Form', schema);
