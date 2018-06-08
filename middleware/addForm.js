@@ -9,10 +9,10 @@ module.exports = function (app) {
             console.log('400');
             return res.sendStatus(400);
         }
-        const {author, question} = req.body;
+        const {author, questions} = req.body;
         console.log(req.body);
         console.log(req.body.author);
-        console.log(author + ' ' + question);
+        console.log(author + ' ' + questions);
         createForm({
             author: author,
             // questions: [
@@ -22,7 +22,7 @@ module.exports = function (app) {
             //         rightAnswer: 1
             //     }
             // ]
-            questions: question
+            questions: questions
         }, function (form) {
             console.log(form);
             res.send('zashli');
