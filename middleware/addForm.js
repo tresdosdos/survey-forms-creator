@@ -9,15 +9,17 @@ module.exports = function (app) {
             console.log('400');
             return res.sendStatus(400);
         }
+        const {author, question} = req.body;
         createForm({
-            author: 'ya',
-            questions: [
-                {
-                    title: 'How are you?',
-                    answers: ['ok', 'not ok', 'good'],
-                    rightAnswer: 1
-                }
-            ]
+            author: author,
+            // questions: [
+            //     {
+            //         title: 'How are you?',
+            //         answers: ['ok', 'not ok', 'good'],
+            //         rightAnswer: 1
+            //     }
+            // ]
+            questions: question
         }, function (form) {
             console.log(form);
         });
