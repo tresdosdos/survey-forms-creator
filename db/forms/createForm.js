@@ -1,4 +1,4 @@
-const Form = require('../../models/user').Form;
+const Form = require('../../models/questions').Form;
 
 module.exports = function createForm(data, callback) {
     const formData = {

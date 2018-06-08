@@ -43,5 +43,5 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 require('./middleware/addForm')(app);
 
 app.get('/*', function (req, res) {
-   res.end('lul');
+   res.send('lul');
 });
