@@ -40,7 +40,8 @@ app.use(function(req, res, next) {
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-require('./middleware/addForm')(app);
+require('./middleware/signUp')(app);
+require('./middleware/signIn')(app);
 require('./middleware/removeForm')(app);
 
 app.get('/*', function (req, res) {
