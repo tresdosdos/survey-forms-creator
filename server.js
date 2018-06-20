@@ -41,6 +41,7 @@ app.use(function(req, res, next) {
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 require('./middleware/addForm')(app);
+require('./middleware/removeForm')(app);
 
 app.get('/*', function (req, res) {
    res.send('lul');
