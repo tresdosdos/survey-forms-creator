@@ -7,8 +7,9 @@ module.exports = function createUser(data, callback) {
         rights: data.rights
     };
     let user = new User(userData);
-    console.log(userData);
-    user.save().then(function (user) {
+    user.save()
+        .then(function (user) {
         callback(user);
-    });
+    })
+        .catch((err) => console.log(err));
 };

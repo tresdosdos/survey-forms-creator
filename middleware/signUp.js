@@ -4,7 +4,6 @@ const jwt = require('../JWT');
 module.exports = function (app) {
     app.post('/signUp', function (req, res) {
         if (!req.body) {
-            console.log('400');
             return res.sendStatus(400);
         }
         const {userName, password} = req.body;
