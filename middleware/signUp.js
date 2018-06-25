@@ -7,13 +7,12 @@ module.exports = function (app) {
             return res.sendStatus(400);
         }
         const {userName, password} = req.body;
-        console.log(userName + ' ' + password);
         createUser({
             userName: userName,
             password: password,
             rights: 'user'
         }, function (user) {
-            console.log(user);
+            user.password = undefined;
             res.send(user);
         });
     });

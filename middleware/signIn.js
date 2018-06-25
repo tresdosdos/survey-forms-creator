@@ -8,6 +8,7 @@ module.exports = function (app) {
         if (req.body.token) {
             const userId = jwt.checkToken(req.body.token).userId;
             getUser(userId, function (user) {
+                user.hashedPassword = undefined;
                 res.send(user);
             });
         } else {
@@ -16,14 +17,12 @@ module.exports = function (app) {
                 if (err) res.status(404).send();
                 else{
                     if (isMatch){
-                        console.log(user._id);
+                        const token = jwt.getToken(user._id);
                         const userData = {
-                            userName: user.userName,
-                            userId: user._id
+                            access_token: token,
+                            data: user
                         };
-                        const token = jwt.getToken(userData);
-                        console.log(token);
-                        res.send(token);
+                        res.send(userData);
                     }
                     else{
                         res.status(403).send();
