@@ -10,13 +10,6 @@ module.exports = function (app) {
         console.log(userName + ' ' + password);
         createUser({
             userName: userName,
-            // questions: [
-            //     {
-            //         title: 'How are you?',
-            //         answers: ['ok', 'not ok', 'good'],
-            //         rightAnswer: 1
-            //     }
-            // ]
             password: password,
             rights: 'user'
         }, function (user) {

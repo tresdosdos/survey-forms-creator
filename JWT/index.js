@@ -2,11 +2,10 @@ const jwt = require('jsonwebtoken');
 
 const jwtSecret = 'Hello$1';
 
-exports.getToken = function(userData) {
+exports.getToken = function(userId) {
     return jwt.sign(
         {
-            userName: userData.userName,
-            userId: userData.userId
+            userId: userId
         },
         jwtSecret,
         {
@@ -17,7 +16,6 @@ exports.getToken = function(userData) {
 };
 
 exports.checkToken = function(token) {
-    console.log(token);
     return jwt.verify(token, jwtSecret, function (err, decoded) {
         if (err) {
             return false;
