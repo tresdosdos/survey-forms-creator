@@ -1,4 +1,5 @@
 const createUser = require('../db/user/createUser');
+const jwt = require('../JWT');
 
 module.exports = function (app) {
     app.post('/signUp', function (req, res) {
@@ -12,8 +13,13 @@ module.exports = function (app) {
             password: password,
             rights: 'user'
         }, function (user) {
-            user.password = undefined;
-            res.send(user);
+            user.hashedPassword = undefined;
+            const token = jwt.getToken(user._id);
+            const userData = {
+                access_token: token,
+                data: user
+            };
+            res.send(userData);
         });
     });
 };
