@@ -8,7 +8,8 @@ const app = express();
 const cors = require('cors');
 const originsWhitelist = [
     'http://localhost:4200',      //this is my front-end url for development
-    'https://survey-forms.herokuapp.com'
+    'https://survey-forms.herokuapp.com',
+    '31.24.94.225'
 ];
 
 const corsOptions = {
