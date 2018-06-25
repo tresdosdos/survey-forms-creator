@@ -22,6 +22,7 @@ module.exports = function (app) {
                             access_token: token,
                             data: user
                         };
+                        userData.data.hashedPassword = undefined;
                         res.send(userData);
                     }
                     else{
